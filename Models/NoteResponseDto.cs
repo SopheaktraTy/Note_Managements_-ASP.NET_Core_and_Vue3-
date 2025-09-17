@@ -1,9 +1,8 @@
-namespace NotesApi.Models
+namespace NotesApi.Dtos
 {
-    public class NoteDto
+    public class NoteResponseDto
     {
         public Guid Id { get; set; }
-        public Guid UserId { get; set; }     // foreign key to Users
         public string Title { get; set; } = string.Empty;
         public string? Content { get; set; }
         public DateTime CreatedAt { get; set; }
