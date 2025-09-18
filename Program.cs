@@ -93,4 +93,7 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+
+app.MapFallbackToFile("index.html"); // SPA history fallback
+
 app.Run();

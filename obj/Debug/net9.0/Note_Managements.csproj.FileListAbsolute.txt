@@ -89,3 +89,6 @@ C:\-------- My PC--------\Appication-Development-Coding\Web Development\Note_Man
 C:\-------- My PC--------\Appication-Development-Coding\Web Development\Note_Managements\bin\Debug\net9.0\runtimes\win-x86\native\sni.dll
 C:\-------- My PC--------\Appication-Development-Coding\Web Development\Note_Managements\bin\Debug\net9.0\runtimes\unix\lib\net8.0\System.Data.SqlClient.dll
 C:\-------- My PC--------\Appication-Development-Coding\Web Development\Note_Managements\bin\Debug\net9.0\runtimes\win\lib\net8.0\System.Data.SqlClient.dll
+C:\-------- My PC--------\Appication-Development-Coding\Web Development\Note_Managements\bin\Debug\net9.0\package-lock.json
+C:\-------- My PC--------\Appication-Development-Coding\Web Development\Note_Managements\bin\Debug\net9.0\package.json
+C:\-------- My PC--------\Appication-Development-Coding\Web Development\Note_Managements\bin\Debug\net9.0\tsconfig.json

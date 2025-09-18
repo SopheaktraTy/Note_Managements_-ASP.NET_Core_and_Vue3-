@@ -13,7 +13,7 @@ namespace NotesApi.Controllers
 
         public AuthController(UserService userService) => _userService = userService;
 
-        [HttpPost("register")]
+        [HttpPost("Register")]
         [AllowAnonymous]
         public async Task<IActionResult> Register([FromBody] AuthRegisterDto req)
         {
@@ -23,10 +23,10 @@ namespace NotesApi.Controllers
             if (user == null) return BadRequest(new { message = "Email already exists." });
 
             return Ok(new { message = "User registered successfully." });
-            // or: return CreatedAtAction(..., new { id = user.Id }, null);
+     
         }
 
-        [HttpPost("login")]
+        [HttpPost("Login")]
         [AllowAnonymous]
         public async Task<IActionResult> Login([FromBody] AuthLoginRequestDto req)
         {

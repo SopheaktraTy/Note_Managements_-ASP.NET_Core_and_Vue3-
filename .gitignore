@@ -1,0 +1,46 @@
+# === .NET build artifacts ===
+bin/
+obj/
+*.exe
+*.dll
+*.pdb
+*.cache
+*.log
+*.user
+*.vs/
+*.suo
+
+# === Build outputs ===
+dist/
+build/
+out/
+
+# === Frontend (Node / Vite) ===
+node_modules/
+.npm/
+.pnpm-debug.log*
+yarn-error.log
+yarn.lock
+package-lock.json
+
+# Vite / Vue / React cache
+.vite/
+.cache/
+
+# === Environment & configs ===
+.env
+.env.*.local
+*.local.json
+
+# === IDE & OS files ===
+.vscode/
+.idea/
+*.iml
+*.DS_Store
+Thumbs.db
+
+# === Logs ===
+logs/
+*.log
+npm-debug.log*
+dotnet-debug.log

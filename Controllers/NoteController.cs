@@ -9,16 +9,15 @@ namespace NotesApi.Controllers
     [ApiController]
     [Route("api/[controller]")]
     [Authorize]
-    public class NotesController : ControllerBase
+    public class NoteController : ControllerBase
     {
         private readonly INoteService _noteService;
 
-        public NotesController(INoteService noteService)
+        public NoteController(INoteService noteService)
         {
             _noteService = noteService;
         }
 
-        // Helper: read UserId from JWT "sub" claim
         private Guid GetUserId()
             {
                 var userIdStr =
@@ -35,13 +34,10 @@ namespace NotesApi.Controllers
             }
 
 
-        [HttpGet]
+        [HttpGet("ViewNotes")]
         public async Task<IActionResult> GetNotes()
         {
             var userId = GetUserId();
-
-            // Example use if you actually need the token for something:
-            // var token = GetBearerToken();
 
             var notes = await _noteService.GetNotes(userId);
 
@@ -57,7 +53,7 @@ namespace NotesApi.Controllers
             return Ok(response);
         }
 
-        [HttpGet("{id:guid}")]
+        [HttpGet("ViewNotesByID/{id:guid}")]
         public async Task<IActionResult> GetNoteById(Guid id)
         {
             var userId = GetUserId();
@@ -76,7 +72,7 @@ namespace NotesApi.Controllers
             return Ok(response);
         }
 
-        [HttpPost]
+        [HttpPost("CreateNotes")]
         public async Task<IActionResult> CreateNote([FromBody] NoteRequestDto request)
         {
             if (request is null) return BadRequest("Body required.");
@@ -98,7 +94,7 @@ namespace NotesApi.Controllers
             return CreatedAtAction(nameof(GetNoteById), new { id = response.Id }, response);
         }
 
-        [HttpPut("{id:guid}")]
+        [HttpPut("UpdateNotes/{id:guid}")]
         public async Task<IActionResult> UpdateNote(Guid id, [FromBody] NoteRequestDto request)
         {
             if (request is null) return BadRequest("Body required.");
@@ -112,7 +108,7 @@ namespace NotesApi.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id:guid}")]
+        [HttpDelete("DeleteNotes/{id:guid}")]
         public async Task<IActionResult> DeleteNote(Guid id)
         {
             var userId = GetUserId();
